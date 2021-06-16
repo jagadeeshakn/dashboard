@@ -12,16 +12,20 @@ export class EarningService extends EarningData {
   private pieChartData = [
     {
       value: 50,
-      name: 'Bitcoin',
+      name: 'NORTH ZONE',
     },
     {
       value: 25,
-      name: 'Tether',
+      name: 'SOUTH ZONE',
     },
     {
       value: 25,
-      name: 'Ethereum',
+      name: 'EAST ZONE',
     },
+    {
+      value: 25,
+      name: 'WEST ZONE',
+    }
   ];
 
   private liveUpdateChartData = {
