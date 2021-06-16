@@ -27,11 +27,11 @@ export class CountryOrdersMapComponent implements OnDestroy {
   selectedCountry;
 
   options = {
-    zoom: 2,
+    zoom: 4,
     minZoom: 2,
     maxZoom: 6,
     zoomControl: false,
-    center: L.latLng({lat: 38.991709, lng: -76.886109}),
+    center: L.latLng({lat: 12.971599, lng: 77.594566}),
     maxBounds: new L.LatLngBounds(
       new L.LatLng(-89.98155760646617, -180),
       new L.LatLng(89.99346179538875, 180),
@@ -124,14 +124,14 @@ export class CountryOrdersMapComponent implements OnDestroy {
       this.resetHighlight(this.selectedCountry);
       this.highlightFeature(featureLayer);
       this.selectedCountry = featureLayer;
-      this.select.emit(featureLayer.feature.properties.name);
+      this.select.emit(featureLayer.feature.properties.NAME_1);
     }
   }
 
   private findFeatureLayerByCountryId(id) {
     const layers = this.layers[0].getLayers();
     const featureLayer = layers.find(item => {
-      return item.feature.id === id;
+      return item.feature.properties.ID_1 === id;
     });
 
     return featureLayer ? featureLayer : null;
